@@ -1,6 +1,6 @@
 node{
    stage('SCM Checkout'){
-     git 'https://github.com/damodaranj/my-app.git'
+     git 'https://github.com/mrezhil/my-app.git'
    }
    stage('Compile-Package'){
 
@@ -14,7 +14,7 @@ node{
 	          sh "${mvnHome}/bin/mvn sonar:sonar"
 	        }
 	    }
-   stage('Build Docker Imager'){
+   stage('Building docker image'){
    sh 'docker build -t saidamo/myweb:0.0.2 .'
    }
    stage('Docker Image Push'){
